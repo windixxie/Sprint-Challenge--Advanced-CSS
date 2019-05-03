@@ -321,3 +321,9 @@ footer {
   height: auto;
   border-radius: 10px;
 }
+.form-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+}
