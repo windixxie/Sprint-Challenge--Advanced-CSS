@@ -1,1 +1,28 @@
 // Navigation code here
+
+.logo {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 45px;
+    margin-bottom: 25px;
+
+    @media @phone {
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+
+    a {
+        .navstyle();
+
+        @media @phone {
+            font-size: 13px;
+            margin-right: 13px;
+            margin-left: 13px;
+        }
+    }
+}
