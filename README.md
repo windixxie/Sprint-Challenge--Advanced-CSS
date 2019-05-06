@@ -34,13 +34,30 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the difference between an adaptive website and a fully responsive website?
 
+Fully responsive websites continuously render a single layout for a given page, that 'responds' in real-time to whatever the current browser size is - regardless of what device you're on. Responsive design continuously 'responds' to the browser size and re-renders the page fluidly - essentially having a sensible layout answer for any possible browser size. Adaptive sites typically have several discreet views of the page that are pre-defined, and targeted at different devices. Each view is rendered 'discreetly' when that device is detected. Adaptive websites will "snap" their view into place when a specific environment is detected, while responsive sites will fluidly transition / re-render between environments without any visible snapping.
+
 2. Describe what it means to be mobile first vs desktop first.
+
+Mobile first vs desktop first refers to which platform the developer/designer thinks of, and builds around as the "starting point" of the user experience. Recently there's a trend towards mobile-first due to the huge growth in mobile web usage. A mobile-first experience typically implements "progressive enhancement" meaning that you first (as the developer) build and optimize the mobile experience - and then as your platform becomes larger (mobile -> tablet -> desktop) gradually add in features that "enhance" the experience, 'progressively'. Conversely, the desktop first approach starts with the desktop experience - aka you build it first - and you assume that this is the default/most-important experience to build. Then as your platform becomes smaller (desktop -> tablet -> mobile) you strip away features .. this is referred to as "graceful degradation" and is often argued to provide a less good overall experience for all platforms.
 
 3. What does `font-size: 62.5%` in the `html` tag do for us when using `rem` units?
 
+The initial impetus for implementing a % for default font-size is to accommodate for the default font-size preferences the user has set on their browser. In other words you can't assume that every browser's default font-size is 16px and then build a pixel-driven layout around that assumption. That said, given that the standard default browser font-size is 16px, setting font-size: 62.5% on the html tag is a great median-case heuristic, and will mean that 1 rem unit = 62.5% of 16px which is 10px. This makes using rem units really easy going forward, and means that in the median case we're working with multiples of 10px. EG 1.5rem = 15px.
+
 4. How would you describe preprocessing to someone new to CSS?
 
+CSS was built a long time ago. More recently some smart programmers have thought up ways that CSS could be better. A lot of these ways borrow concepts from 'scripting' languages - concepts like variables and functions. So there are now some CSS-like languages that have these improvements in them. The problem is that browsers can't read and render these languages by default. So these same smart programmers invented programs that will 'translate' their improved CSS languages into vanilla CSS that the browser knows how to deal with. Think of it sort of like Google Translate where you're going from something that looks basically like CSS, with some new features, over to vanilla CSS.
+
 5. What is your favorite concept in preprocessing? What is the concept that gives you the most trouble?
+
+In preprocessing as a concept (ie not an implementation like LESS or SASS specifically) - my favorite idea you can design enhancements into a language (eg variables, mixins) that then are available instantly to all web users because preprocessor compiles these enhancements into vanilla CSS. It's the idea of making the dev experience better today, without having to wait for the underlying standards/protocols to evolve.
+
+My least favorite facet is the ever-bloating complexity of modern dev environments (ie having to run a preprocessor in the background) as "just one more thing you have to worry about".
+
+In LESS , specifically, my favorite concept is nesting. It's easier for the human eye to read and understand which makes development faster and is beneficial for collaboration. It also maps more closely to the HTML that it's styling, as HTML is also a nested structure. Additionally, you can reduce the number of classes / ids that clutter up your HTML because nesting allows you to implicitly target elements without them.
+
+The thing I am having the most trouble dealing with is with the compiler at all times. One semicolon out of place and it breaks. This of course has its upside - you can't make mistakes and not realize you've made them. But it feels like a harsher environment than vanilla CSS.
+
 
 You are expected to be able to answer all these questions. Your responses contribute to your Sprint Challenge grade. Skipping this section *will* prevent you from passing this challenge.
 
